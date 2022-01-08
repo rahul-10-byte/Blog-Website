@@ -18,13 +18,26 @@ app.use(express.static("public"));
 app.get("/", function (req, res) {
     res.render("home",{ homeContent: homeStartingContent});
 });
+
 app.get("/about", function (req, res) {
   res.render("about",{ aboutContent: aboutContent});
 });
+
 app.get("/contact", function (req, res) {
   res.render("contact",{ contactContent: contactContent});
 });
 
+app.get("/compose", function (req, res) {
+  res.render("compose");
+});
+
+app.post("/compose", function name(req, res) {
+  const post = {
+    title: req.body.postTitle,
+    body: req.body.postBody
+  };
+  console.log(post);
+});
 
 
 
