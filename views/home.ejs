@@ -2,6 +2,14 @@
 
 <h1>Home</h1>
 
-<p><%= homeContent %></p>
+<p> <%= homeContent %></p>
+
+<% postData.forEach( function(ele) { %>
+
+    <h1> <%= ele.title %> </h1>
+
+    <p> <%= ele.body %> </p>
+        
+<% }); %>
 
 <%- include("partials/footer") -%>
