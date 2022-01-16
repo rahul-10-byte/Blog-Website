@@ -42,6 +42,17 @@ app.get("/compose", function (req, res) {
   res.render("compose");
 });
 
+app.get("/posts/:topic", function (req, res) {
+  
+  var reqTitle = req.params.topic;
+  console.log(reqTitle);
+  
+  for(var i = 0 ; i < postData.length ; i++ ) {
+    if(reqTitle === postData[i].title)
+      console.log("Match Found!!!");
+  }
+});
+
 app.post("/compose", function name(req, res) {
   const post = {
     title: req.body.postTitle,
