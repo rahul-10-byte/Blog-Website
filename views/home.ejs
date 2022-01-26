@@ -8,7 +8,12 @@
 
     <h1> <%= ele.title %> </h1>
 
-    <p> <%= ele.body %> </p>
+    <% var truncString = ele.body.substring(0, 100) + "..."; %>
+
+    <p> 
+        <%= truncString %>  
+        <a href="/posts/<%= ele.title %>">Read More</a>
+    </p>
         
 <% }); %>
 
